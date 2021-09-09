@@ -24,6 +24,8 @@
             <div class="col">
                 <asp:Label ID="Label1" runat="server" Width="100%">Modulo:</asp:Label>
                 <asp:TextBox ID="txtModulo" runat="server" CssClass="form-control " Width="100%" ></asp:TextBox>
+                <asp:DropDownList ID="ddlProceso" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlProceso_SelectedIndexChanged" AutoPostBack="true" ></asp:DropDownList>
+
             </div>
            
 
@@ -36,6 +38,8 @@
             <div class="col">
                 <asp:Label ID="lblPaso" runat="server" Width="100%" >Paso:</asp:Label>
                 <asp:TextBox ID="txtPaso" runat="server" CssClass="form-control" Width="100%" ></asp:TextBox>
+                <asp:DropDownList ID="ddlDetalleProceso" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlDetalleProceso_SelectedIndexChanged"></asp:DropDownList>
+
             </div>
           
 

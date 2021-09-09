@@ -17,5 +17,10 @@ namespace CentroVivoControlInterno
         public int estado { get; set; }
         public DateTime fecha { get; set; }
 
+        public int idProceso { get; set; }
+        public int idDetalleProceso { get; set; }
+        public string proceso { get; set; }
+        public string descripionProceso { get; set; }
+
     }
 }

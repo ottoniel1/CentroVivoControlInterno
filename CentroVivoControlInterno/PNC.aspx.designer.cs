@@ -51,6 +51,15 @@ namespace CentroVivoControlInterno
         protected global::System.Web.UI.WebControls.TextBox txtModulo;
 
         /// <summary>
+        /// Control ddlProceso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProceso;
+
+        /// <summary>
         /// Control lblPaso.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace CentroVivoControlInterno
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPaso;
+
+        /// <summary>
+        /// Control ddlDetalleProceso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDetalleProceso;
 
         /// <summary>
         /// Control lblDescripcion.

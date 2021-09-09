@@ -12,7 +12,7 @@ namespace CentroVivoControlInterno.Controladores
     {
         ConexionDB conexion;
 
-
+        DataTable data;
         public DataTable IngresoPnc(PncM pnc)
         {
             string query = string.Format("CALL so_pnc('{0}','{1}','{2}',0, '{3}', 1  );", pnc.usuario, pnc.modulo,pnc.paso,pnc.descripcion);
@@ -35,5 +35,29 @@ namespace CentroVivoControlInterno.Controladores
 
             return dt;
         }
+
+
+        public DataTable CatalogoProceso(int idProceso, int opcion)
+        {
+            conexion = new ConexionDB();
+            data = new DataTable();
+            try
+            {
+                string query = string.Format("CALL  sp_catalogosProceso({0},{1});", idProceso, opcion);
+                conexion.AbrirConexion();
+                MySqlDataAdapter consulta = new MySqlDataAdapter(query, conexion.conectar);
+                consulta.Fill(data);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+            return data;
+        }
+        
     }
 }

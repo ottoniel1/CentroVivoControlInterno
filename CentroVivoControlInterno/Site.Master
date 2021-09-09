@@ -4,16 +4,16 @@
 
 <html lang="es">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
+    <title><%: Page.Title %> - Aseguramiento de la Calidad</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
@@ -35,46 +35,90 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
+
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://flowchart.js.org/flowchart-latest.js"></script>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Nombre de la aplicación</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/About">Acerca de</a></li>
-                        <li><a runat="server" href="~/Contact">Contacto</a></li>
-                    </ul>
+
+        <asp:Panel ID="panel1" runat="server">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" runat="server" href="/">Centro Vivo | Control Interno</a>
+                    </div>
+
+
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Flujos<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a runat="server" href="~/Flujo1.aspx">Flujo 1 - Control de Lecturas</a></li>
+                                    <li><a runat="server" href="~/Flujo2.aspx">Flujo 2 - Notas de Cobro</a></li>
+                                    <li><a runat="server" href="~/Flujo3.aspx">Flujo 3 - Constancia de Pago</a></li>
+                                    <li><a runat="server" href="~/Flujo4.aspx">Flujo 4 - Confrontas de Pago</a></li>
+                                    <li><a runat="server" href="~/Flujo5.aspx">Flujo 5 - Reportes</a></li>
+                                </ul>
+                            </li>
+                            <%--<li><a runat="server" href="~/About">Acerca de</a></li>--%>
+                            <li><a runat="server" href="~/Contact">Contacto</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-         <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+        </asp:Panel>
+
+        <asp:Panel ID="panel2" runat="server" Visible="false">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" runat="server" href="/">Centro Vivo | Control Interno</a>
+                    </div>
+
+
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <%--<li><a runat="server" href="~/About">Acerca de</a></li>--%>
+                            <li><a runat="server" href="~/Contact">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </asp:Panel>
+
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
 
         <div class="container body-content">
-           
+
 
 
             <hr />
-           
-          
+
+
         </div>
 
-         <asp:ContentPlaceHolder ID="FooterContent" runat="server">
-                  <footer>
+        <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+            <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
             </footer>
-            </asp:ContentPlaceHolder>
+        </asp:ContentPlaceHolder>
 
     </form>
 </body>
